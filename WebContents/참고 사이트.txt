@@ -1,0 +1,10 @@
+sunny.gif : https://gifer.com/en/IsL
+cloudy.gif : https://stormandsky.com/gifs
+snow.gif = https://makeagif.com/i/0HyPMt
+zoIXIeC.gif = 		https://imgur.com/zoIXIeC
+
+오렌지 물결무늬(커뮤니티 게시글 제목 배경)
+=https://www.123freevectors.com/download-designs/?id=79569&key=Dark%20Orange%20Wave%20vector&vector=316456&fileid=a77d1
+
+
+http://api.visitkorea.or.kr/openapi/service/rest/KorService/detailImage?serviceKey=GvgzjQibQcjbUp07G2sAWeHuSI6nuPzv5%2FeMiGalVOXriLrccWJAqQ2Bvs5%2FRKh1uGPI1kMQlMfLDn0EDcczqQ%3D%3D&numOfRows=10&pageNo=1&MobileOS=ETC&MobileApp=AppTest&contentId=1095732&imageYN=Y&subImageYN=Y

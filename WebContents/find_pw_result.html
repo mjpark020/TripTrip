@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>비밀번호 변경화면</title>
+<style>
+	main	{ padding : 100px;
+			background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47));
+	}
+	table	{ border: 1px solid white; text-align: center; margin : auto; border-radius: 20px;
+			background: white;
+	}
+	td		{ padding: 10px;}
+</style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+
+
+	$(function() {
+		$('#old_pw').keyup(function() {
+			$('#passwdchk').html('');
+		});
+
+		$('#new_pw').keyup(function() {
+
+			if ($('#old_pw').val() != $('#new_pw').val()) {
+				$('#passwdchk').html('비밀번호 일치하지 않음<br>');
+				$('#passwdchk').attr('color', '#f82a2aa3');
+			} else {
+				$('#passwdchk').html('비밀번호 일치함<br>');
+				$('#passwdchk').attr('color', '#199894b3');
+			}
+
+		});
+	});
+</script>
+</head>
+<body>
+	<main>
+		<form action="changepwd" method="POST">
+			<table>
+				<tr>
+					<td colspan="2"><h2>비밀번호 변경</h2></td>
+				</tr>
+				<tr>
+					<td>현재 비밀번호</td>
+					<td><input type="password" id="old_pw" name="oldPw"
+						placeholder="현재 비밀번호" /></td>
+				</tr>
+				<tr>
+					<td>새로운 비밀번호</td>
+					<td><input type="password" id="new_pw" name="newPw"
+						placeholder="새로운 비밀번호" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><font id="passwdchk" size="2"></font></td>
+				</tr>
+				<tr>
+					<td><button type="submit">적용</button></td>
+					<td><button type="button">닫기</button></td>
+				</tr>
+			</table>
+		</form>
+	</main>
+</body>
+</html>

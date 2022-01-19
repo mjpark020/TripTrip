@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/find_idstyle.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+	body { background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47)); }
+	.wrap { width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center; 
+			background: rgba(0, 0, 0, 0.1);}
+	
+	.btn1 { display: block; width: 75px; height: 50px; background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47)); text-decoration: none; 
+		text-align: center; line-height: 50px; color: white; border-radius: 50px; }
+		
+	.btn2 { display: block; width: 75px; height: 50px; text-decoration: none; 
+		text-align: center; line-height: 50px; background: linear-gradient(to left, rgb(255, 77, 46), rgb(255, 155, 47)); color: white; border-radius: 50px; }
+
+	h2 { color: rgb(255, 150, 38); background: white; font-size: 2em; }
+	.popup { position: absolute; left: 50%; top: 50%; z-index: 5; transform: translate(-50%, -50%);
+			width: 400px; height: 300px; box-shadow: 0 0 10px rgba(0,0,0,0.5); background: #fff; 
+			border-radius: 5px; text-align: right; padding: 20px; box-sizing: border-box; opacity: 0; 
+			transition: all 0.5s; }
+	
+	.popup a { color: gray; text-decoration: none; }
+	.popup:target { opacity: 1; }
+	.popup:target + .dim { opacity: 1; z-index : 2; }
+	.dim { position: absolute; left: 0; top: 0; z-index : -1; width: 100%; height: 100%; background: rgba(0,0,0,0.6);
+			opacity: 0; transition: all 0.5s; }
+</style>
+</head>
+<body>
+	<div class="wrap">
+	<div class="tab_content">
+		<input type="radio" name="tabmenu" id="tab01" checked /> 
+		<label for="tab01">아이디 찾기</label>
+		<input type="radio" name="tabmenu" id="tab02" /> 
+		<label for="tab02">비밀번호 찾기</label>
+
+		<div class="conbox con1">
+			<form action="findid" method="POST">
+				<table>
+					<tbody>
+						<tr>
+							<td colspan="2"><h2>아이디 찾기</h2></td>
+						</tr>
+						<tr>
+							<th>이름</th>
+							<td><input type="text" name="name" placeholder="이름을 입력하세요." required /></td>
+						</tr>
+						<tr>
+							<th>이메일</th>
+							<td><input type="text" name="email" placeholder="이메일을 입력하세요." required /></td>
+						</tr>
+					</tbody>
+					<tfoot1>
+						<tr>
+							<td><a href="#pop1" class="btn1">찾기</a></td>
+						</tr>
+					</tfoot1>
+				</table>
+			</form>
+		</div>
+		<div class="conbox con2">
+			<form action="findpw" method="POST">
+				<table>
+					<tr>
+						<td colspan="2"><h2>비밀번호 찾기</h2></td>
+					</tr>
+					<tbody>
+						<tr>
+							<th>아이디</th>
+							<td><input type="text" name="id" placeholder="아이디를 입력하세요." required /></td>
+						</tr>
+						<tr>
+							<th>이메일</th>
+							<td><input type="text" name="email" placeholder="이메일을 입력하세요." required /></td>
+						</tr>
+					</tbody>
+					<tfoot id="popup">
+						<tr>
+							<td><a href="#pop1" class="btn1">찾기</a></td>
+							<td><a href="#pop2" class="btn2">변경</a></td>
+						</tr>
+					</tfoot>
+				</table>
+			</form>
+		</div>
+	</div>
+	<div class="popup" id="pop2">
+		<form action="changepwd" method="POST">
+			<a href="#a">닫기</a>
+			<table>
+				<tr>
+					<td colspan="2"><h2>비밀번호 변경</h2></td>
+				</tr>
+				<tr>
+					<td>현재 비밀번호</td>
+					<td><input type="password" id="old_pw" name="oldPw" placeholder="현재 비밀번호" /></td>
+				</tr>
+				<tr>
+					<td>새로운 비밀번호</td>
+					<td><input type="password" id="new_pw" name="newPw" placeholder="새로운 비밀번호" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><font id="passwdchk" size="2"></font></td>
+				</tr>
+				<tr>
+					<td><button type="submit">적용</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	<div class="dim"></div>
+	</div>
+</body>
+</html>
