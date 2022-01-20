@@ -8,6 +8,8 @@
   * CSS
 * 라이브러리
   * JQuery
+* DB
+  * Oracle DB 11g  
 * API
   * 한국관광공사_국문 관광정보 서비스 (https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15057787)
   * 기상청_단기예보 ((구)_동네예보) 조회서비스 (https://www.data.go.kr/tcs/dss/selectApiDataDetailView.do?publicDataPk=15084084)
